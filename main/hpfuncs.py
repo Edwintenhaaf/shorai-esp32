@@ -9,10 +9,10 @@ except Exception as e:
 modetoint = {"auto":65, "cool":66, "heat":67, "dry":68, "fan_only":69}
 inttomode = dict(map(reversed, modetoint.items()))
 
-fanmodetoint = {"quiet":49, "lvl_1": 50, "lvl_2":51, "lvl_3":52, "lvl_4":53, "lvl_5":54, "auto":65} 
+fanmodetoint = {"auto":65, "quiet":49, "lvl_1": 50, "lvl_2":51, "lvl_3":52, "lvl_4":53, "lvl_5":54 } 
 inttofanmode = dict(map(reversed, fanmodetoint.items()))
 
-swingtoint = {"off": 49, "vertical":65, "both":67, "horizontal":66, "FIX_POS_1":80, "FIX_POS_2":81, "FIX_POS_3":82, "FIX_POS_4":83, "FIX_POS_5":84 }
+swingtoint = {"off": 49, "vertical":65, "both":67, "horizontal":66, "fixed 1":80, "fixed 2":81, "fixed 3":82, "fixed 4":83, "fixed 5":84 }
 inttoswing = dict(map(reversed, swingtoint.items()))
 
 statetoint = {"ON":48, "OFF":49}
