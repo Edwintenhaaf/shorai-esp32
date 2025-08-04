@@ -15,6 +15,7 @@ topic_sub_state =  b"" + config['maintopic'] + "/state/set"
 topic_sub_fanmode =  b"" + config['maintopic'] + "/fanmode/set"
 topic_sub_swingmode =  b"" + config['maintopic'] + "/swingmode/set"
 topic_sub_mode =   b"" + config['maintopic'] + "/mode/set"
+topic_sub_specialmode =  b"" + config['maintopic'] + "/specialmode/set"
 topic_sub_doinit =  b"" + config['maintopic'] + "/doinit"
 topic_sub_restart =  b"" + config['maintopic'] + "/restart"
 topic_sub_watchdog =  b"" + config['maintopic'] + "/watchdog"
@@ -69,6 +70,16 @@ def sub_cb(topic, msg, retained, properties=None):
     ################################################
     # mode
     elif topic == topic_sub_mode:
+        try:
+            values = hpfuncs.modeControl(msg)
+            if values == False:
+                runwrite = False
+        except Exception as e:
+            hpfuncs.logprint(e)
+            runwrite = False
+    ################################################
+    # specialmode
+    elif topic == topic_sub_specialmode:
         try:
             values = hpfuncs.modeControl(msg)
             if values == False:
