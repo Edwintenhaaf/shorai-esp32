@@ -9,7 +9,7 @@ except Exception as e:
 modetoint = {"auto":65, "cool":66, "heat":67, "dry":68, "fan_only":69}
 inttomode = dict(map(reversed, modetoint.items()))
 
-fanmodetoint = {"auto":65, "quiet":49, "lvl_1": 50, "lvl_2":51, "lvl_3":52, "lvl_4":53, "lvl_5":54 } 
+fanmodetoint = {"auto":65, "quiet":49, "low": 50, "medium low":51, "medium":52, "medium high":53, "high":54 } 
 inttofanmode = dict(map(reversed, fanmodetoint.items()))
 
 swingtoint = {"off": 49, "vertical":65, "both":67, "horizontal":66, "fixed 1":80, "fixed 2":81, "fixed 3":82, "fixed 4":83, "fixed 5":84 }
@@ -135,3 +135,4 @@ def watchdog():
     bootlist.append((2,0,3,16,0,0,6,1,48,1,0,1,190,246))
     return bootlist
  
+
