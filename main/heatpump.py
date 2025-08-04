@@ -135,7 +135,7 @@ async def conn_han(client):
     hpfuncs.logprint("subscribing to MQTT topics")
     for i in topics:
         await client.subscribe(i,1)
-    hpfuncs.logprint("subscribtion done")
+    hpfuncs.logprint("subscription done")
 
 # first run to collect values and run watchdog
 async def firstrun_and_watchdog(client, version):
