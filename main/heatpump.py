@@ -172,6 +172,9 @@ async def process_event(client, event, event_data):
     if(event == "176"):
         mode = hpfuncs.inttomode[event_data]
         await client.publish(config['maintopic'] + '/mode/state', str(mode), retain=True, qos=1)
+    if(event == "247"):
+        mode = hpfuncs.inttomode[event_data]
+        await client.publish(config['maintopic'] + '/specialmode/state', str(mode), retain=True, qos=1)
     if(event == "190"):
         outdoortemp = int_to_signed(event_data)
         if (outdoortemp != 127):
