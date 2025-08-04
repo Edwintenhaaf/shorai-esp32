@@ -11,17 +11,17 @@ inttomode = dict(map(reversed, modetoint.items()))
 
 # Special_mode 247, checksum: 189
 specialmodetoint = {  
-  "STANDARD" = 0,
-  "HI_POWER" = 1,
-  "ECO" = 3,
-  "FIREPLACE_1" = 32,
-  "FIREPLACE_2" = 48,
-  "EIGHT_DEG" = 4,
-  "SILENT_1" = 2,
-  "SILENT_2" = 10,
-  "SLEEP" = 5,
-  "FLOOR" = 6,
-  "COMFORT" = 7 } 
+  "STANDARD":0,
+  "HI_POWER":1,
+  "ECO":3,
+  "FIREPLACE_1":32,
+  "FIREPLACE_2":48,
+  "EIGHT_DEG":4,
+  "SILENT_1":2,
+  "SILENT_2":10,
+  "SLEEP":5,
+  "FLOOR":6,
+  "COMFORT":7 } 
 inttospecialmode = dict(map(reversed, specialmodetoint.items()))
 
 fanmodetoint = {"auto":65, "quiet":49, "low": 50, "medium low":51, "medium":52, "medium high":53, "high":54 } 
