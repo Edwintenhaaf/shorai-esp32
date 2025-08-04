@@ -19,7 +19,7 @@ topic_sub_specialmode =  b"" + config['maintopic'] + "/specialmode/set"
 topic_sub_doinit =  b"" + config['maintopic'] + "/doinit"
 topic_sub_restart =  b"" + config['maintopic'] + "/restart"
 topic_sub_watchdog =  b"" + config['maintopic'] + "/watchdog"
-topics = [topic_sub_setp, topic_sub_state, topic_sub_doinit, topic_sub_fanmode, topic_sub_mode, topic_sub_swingmode, topic_sub_restart, topic_sub_watchdog]
+topics = [topic_sub_setp, topic_sub_state, topic_sub_doinit, topic_sub_fanmode, topic_sub_mode, topic_sub_specialmode, topic_sub_swingmode, topic_sub_restart, topic_sub_watchdog]
 
 def int_to_signed(intval):
     if intval > 127:
