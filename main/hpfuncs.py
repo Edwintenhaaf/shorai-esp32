@@ -10,21 +10,10 @@ modetoint = {"auto":65, "cool":66, "heat":67, "dry":68, "fan_only":69}
 inttomode = dict(map(reversed, modetoint.items()))
 
 # Special_mode 247, checksum: 189
-specialmodetoint = {  
-  "STANDARD":0,
-  "HI_POWER":1,
-  "ECO":3,
-  "FIREPLACE_1":32,
-  "FIREPLACE_2":48,
-  "EIGHT_DEG":4,
-  "SILENT_1":2,
-  "SILENT_2":10,
-  "SLEEP":5,
-  "FLOOR":6,
-  "COMFORT":7 } 
+specialmodetoint = {"STANDARD":0, "HI_POWER":1, "ECO":3, "FIREPLACE_1":32, "FIREPLACE_2":48, "EIGHT_DEG":4, "SILENT_1":2, "SILENT_2":10, "SLEEP":5,"FLOOR":6, "COMFORT":7 } 
 inttospecialmode = dict(map(reversed, specialmodetoint.items()))
 
-fanmodetoint = {"auto":65, "quiet":49, "low": 50, "medium low":51, "medium":52, "medium high":53, "high":54 } 
+fanmodetoint = {"auto":65, "quiet":49, "low": 50, "medium_low":51, "medium":52, "medium_high":53, "high":54 } 
 inttofanmode = dict(map(reversed, fanmodetoint.items()))
 
 swingtoint = {"off": 49, "vertical":65, "both":67, "horizontal":66, "fixed 1":80, "fixed 2":81, "fixed 3":82, "fixed 4":83, "fixed 5":84 }
@@ -75,7 +64,7 @@ def modeControl(msg):
         function_value = modetoint[message]
         control_code = checksum(function_value,function_code)
         mylist = (2,0,3,16,0,0,7,1,48,1,0,2,function_code,function_value,control_code)
-        getlist = (2,0,3,16,0,0,6,1,48,1,0,1,function_code,189)
+        getlist = (2,0,3,16,0,0,6,1,48,1,0,1,function_code,45)
         myvalues = (mylist, getlist)
     except Exception as e:
         logprint(e)
@@ -89,7 +78,7 @@ def specialControl(msg):
         function_value = specialmodetoint[message]
         control_code = checksum(function_value,function_code)
         mylist = (2,0,3,16,0,0,7,1,48,1,0,2,function_code,function_value,control_code)
-        getlist = (2,0,3,16,0,0,6,1,48,1,0,1,function_code,45)
+        getlist = (2,0,3,16,0,0,6,1,48,1,0,1,function_code,189)
         myvalues = (mylist, getlist)
     except Exception as e:
         logprint(e)
@@ -109,8 +98,6 @@ def fanControl(msg):
         logprint(e)
         myvalues = False
     return myvalues
-
-
 
 def stateControl(msg):
     function_code = 128
@@ -157,7 +144,6 @@ def queryall():
      bootlist.append((2,0,3,16,0,0,6,1,48,1,0,1,148,32))
      bootlist.append((2,0,3,16,0,0,6,1,48,1,0,1,247,189))
      return bootlist    
-
 
 def watchdog():
     bootlist = []
